@@ -191,7 +191,7 @@
         <div class="chat-input-prompt" id="chat-input-prompt">
             <!-- 关键词提示将在这里动态生成 -->
         </div>
-		<button id="reverse-button">让思维逆转起来吧！</button>
+		<button id="reverse-button">更改为正常对话</button>
     </div>
     <div class="chat-input">
         <input type="text" id="message-input" placeholder="输入消息..." onkeydown="handleEnter(event)">
@@ -208,11 +208,11 @@
         // 回复字典，包含关键词、图片URL（如果有）和配文
         const replyDictionary = {
 		    "跳舞成步堂": { 
-				image: "1.gif", 
-                text: "孩子们我喜欢跳这个😍"
+				image: "7.png", 
+                text: "应该将思维逆转过来， 不应该想跳舞的舞姿？而是想为什么跳舞？<br>[异议]<br>用户肯定是想看我出丑！"
             },
 			"<h1>超级大的文本</h1>": { 
-				 text: "<h1>我也会!!!</h1>"
+				 text: "让思维逆转起来！不要想为什么要发超大的文本，是要想超大的文本有什么用？<br>[异议]<br>原来是站长想告诉用户可以像这样发HTML语句"
             },
 			"添加对话": { 
 				 text: "在欢迎信息的<strong>👉点击这里帮助成步堂提高智商👈</strong>链接就是添加对话的地方"
@@ -1389,16 +1389,16 @@ reverseButton.addEventListener('click', function() {
     }
     
     // 构造目标URL，将用户输入的内容作为查询参数附加到URL上
-    const url = `http://45.114.124.81/taw.html?message=${encodeURIComponent(userMessage)}`;
+    const url = `http://45.114.124.81/?message=${encodeURIComponent(userMessage)}`;
     
     // 使用window.location.href实现页面跳转
     window.location.href = url;
 });
 
 window.onload = function() {
-    const welcomeMessage = "加入逆转裁判ai交流群<br>对话是否添加成功一目了然，还可以催站长更新<br>╮(￣▽￣)╭‍</p>";
-    const welcomeImage = "<img src='1723195184767.png' alt='png' style='max-width:100%;margin:0 auto;display:block;'>";
-    const welcomeContent = `<p>${welcomeMessage}</p>${welcomeImage}<p><a href='https://www.wjx.cn/vm/YrgYj3Z.aspx#  ' target='_blank' style='color:#1AAD19;text-decoration:none;'>️👉点击这里帮助成步堂提高智商👈</a><br><a href='http://45.114.124.81/notice.html' target='_blank' style='color:#1AAD19;text-decoration:none;'>️👉点击这里查看已添加的对话👈</a><br><a href='http://45.114.124.81/?message=%E6%88%91%E8%A6%81%E5%8A%A0%E5%85%A5%E7%BE%A4%E8%81%8A' target='_blank' style='color:#1AAD19;text-decoration:none;'>️👉点击这里加入群聊👈</a>`;
+    const welcomeMessage = "原来是这样，把思维逆转起来吧！<br>请帮助我~~~<br>目前修改过的对话很少，请点击下方链接帮我";
+    const welcomeImage = "<img src='7.png' alt='png' style='max-width:100%;margin:0 auto;display:block;'>";
+    const welcomeContent = `<p>${welcomeMessage}</p>${welcomeImage}<p><a href='https://www.wjx.cn/vm/YDSYeBs.aspx# ' target='_blank' style='color:#1AAD19;text-decoration:none;'>️👉点击这里添加更多让四维逆转起来的语句👈</a><br><a href='http://45.114.124.81/notice.html' target='_blank' style='color:#1AAD19;text-decoration:none;'>️👉点击这里查看已添加的对话👈</a><br><a href='http://45.114.124.81/?message=%E6%88%91%E8%A6%81%E5%8A%A0%E5%85%A5%E7%BE%A4%E8%81%8A' target='_blank' style='color:#1AAD19;text-decoration:none;'>️👉点击这里加入群聊👈</a>`;
     addMessage(welcomeContent, false);
     updateKeywordPrompts(); // 页面加载时显示关键词提示
 	sendMessageFromURL(); // 页面加载完成后调用函数发送消息
